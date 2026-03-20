@@ -1,4 +1,4 @@
-import sculptureImg from "@/assets/products/sculpture-dancers.jpg";
+import sculptureImg from "@/assets/products/horse face.jpeg";
 
 const AboutSection = () => (
   <section id="about" className="py-24 lg:py-32">

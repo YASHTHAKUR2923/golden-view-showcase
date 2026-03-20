@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo new.png";
 
 const Footer = () => (
   <footer className="border-t border-border py-12">

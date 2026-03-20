@@ -19,7 +19,7 @@ const HeroSection = () => (
           for the World
         </h1>
         <p className="text-muted-foreground text-lg leading-relaxed max-w-lg mb-10 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          Beautifully crafted home accessories in cast aluminium, iron, and glass — designed in India, delivered worldwide.
+          Beautifully crafted home accessories in , iron, and glass — designed in India, delivered worldwide.
         </p>
         <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.45s" }}>
           <a

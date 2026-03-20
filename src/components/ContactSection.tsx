@@ -4,8 +4,26 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = formData.get("name")?.toString().trim() || "(not provided)";
+    const email = formData.get("email")?.toString().trim() || "(not provided)";
+    const company = formData.get("company")?.toString().trim() || "(not provided)";
+    const country = formData.get("country")?.toString().trim() || "(not provided)";
+    const message = formData.get("message")?.toString().trim() || "(not provided)";
+
+    const subject = encodeURIComponent(`New enquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}%0AEmail: ${email}%0ACompany: ${company}%0ACountry: ${country}%0A%0AMessage:%0A${message}`
+    );
+
+    const recipient = "info@vashishthami.in";
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
     setSubmitted(true);
   };
 
@@ -28,21 +46,21 @@ const ContactSection = () => {
               <Mail className="text-primary mt-1 shrink-0" size={20} />
               <div>
                 <p className="text-sm font-medium text-foreground">Email</p>
-                <p className="text-muted-foreground text-sm">info@vashishthametals.com</p>
+                <p className="text-muted-foreground text-sm">info@vashishthami.in</p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
               <Phone className="text-primary mt-1 shrink-0" size={20} />
               <div>
                 <p className="text-sm font-medium text-foreground">Phone</p>
-                <p className="text-muted-foreground text-sm">Contact us for details</p>
+                <p className="text-muted-foreground text-sm">+919289507845</p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
               <MapPin className="text-primary mt-1 shrink-0" size={20} />
               <div>
                 <p className="text-sm font-medium text-foreground">Location</p>
-                <p className="text-muted-foreground text-sm">India</p>
+                <p className="text-muted-foreground text-sm">vasant vihar near radhika farm house khushalpur, delhi road moradabad ,India</p>
               </div>
             </div>
 
@@ -70,12 +88,14 @@ const ContactSection = () => {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <input
+                    name="name"
                     required
                     type="text"
                     placeholder="Full Name"
                     className="w-full bg-card border border-border rounded px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
                   />
                   <input
+                    name="email"
                     required
                     type="email"
                     placeholder="Email Address"
@@ -83,16 +103,19 @@ const ContactSection = () => {
                   />
                 </div>
                 <input
+                  name="company"
                   type="text"
                   placeholder="Company Name"
                   className="w-full bg-card border border-border rounded px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
                 />
                 <input
+                  name="country"
                   type="text"
                   placeholder="Country"
                   className="w-full bg-card border border-border rounded px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
                 />
                 <textarea
+                  name="message"
                   required
                   rows={5}
                   placeholder="Your enquiry — products of interest, quantities, customization needs..."

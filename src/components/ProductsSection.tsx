@@ -9,14 +9,14 @@ import candlesticks from "@/assets/products/candlesticks.jpg";
 import sculptureDancers from "@/assets/products/sculpture-dancers.jpg";
 
 const products = [
-  { name: "Conical Candle Holders", category: "Cast Aluminium", image: candleholdersCone },
-  { name: "Decorative Vases", category: "Cast Aluminium", image: vases },
+  { name: "Conical Candle Holders", category: "", image: candleholdersCone },
+  { name: "Decorative Vases", category: "", image: vases },
   { name: "Elephant Figurines", category: "Décor Accents", image: elephants },
-  { name: "Leaf Platters", category: "Cast Aluminium", image: leafTrays },
-  { name: "Organic Bowls", category: "Cast Aluminium", image: organicBowls },
-  { name: "Serving Trays", category: "Cast Aluminium", image: trays },
-  { name: "Artisan Bowls", category: "Cast Aluminium", image: bowls },
-  { name: "Beaded Candlesticks", category: "Cast Aluminium", image: candlesticks },
+  { name: "Leaf Platters", category: "", image: leafTrays },
+  { name: "Organic Bowls", category: "", image: organicBowls },
+  { name: "Serving Trays", category: "", image: trays },
+  { name: "Artisan Bowls", category: "", image: bowls },
+  { name: "Beaded Candlesticks", category: "", image: candlesticks },
   { name: "Bronze Sculpture", category: "Art & Sculpture", image: sculptureDancers },
 ];
 
@@ -29,7 +29,7 @@ const ProductsSection = () => (
           Handcrafted <span className="text-gradient-gold">Products</span>
         </h2>
         <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-          Explore our range of cast aluminium, glass, and iron home accessories — each piece crafted with precision and artistry.
+          Explore our range of , glass, and iron home accessories — each piece crafted with precision and artistry.
         </p>
       </div>
 
